@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"strconv"
 	"testing"
 )
@@ -22,4 +23,22 @@ func TestNewDeck(t *testing.T) {
 		t.Errorf("Expected last card to be Red Joker, but got %v", d[len(d)-1])
 	}
 
+}
+
+func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
+	cleanDeckFromFile("_decktesting")
+
+	deck := newDeck()
+	deck.saveToFile("_decktesting")
+
+	loadedDeck := newDeckFromFile("_decktesting")
+
+	if len(loadedDeck) != 54 {
+		t.Errorf("Expected 54 cards in deck, got %v", len(loadedDeck))
+	}
+	cleanDeckFromFile("_decktesting")
+}
+
+func cleanDeckFromFile(filename string) {
+	os.Remove(filename)
 }
