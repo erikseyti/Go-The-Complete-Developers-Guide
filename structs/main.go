@@ -34,22 +34,27 @@ func main() {
 	// fmt.Printf("%+v", alex)
 	// fmt.Println("")
 
-	jim := person{
-		firstName: "Jim",
-		lastName:  "Party",
-		contactInfo: contactInfo{
-			email:   "Jim@gamil.com",
-			zipCode: 94000,
-		},
-	}
+	// jim := person{
+	// 	firstName: "Jim",
+	// 	lastName:  "Party",
+	// 	contactInfo: contactInfo{
+	// 		email:   "Jim@gamil.com",
+	// 		zipCode: 94000,
+	// 	},
+	// }
 
 	// jimPointer := &jim
 
 	// fmt.Print(jimPointer)
 
-	jim.updateName("jimmy")
-	jim.print()
-	fmt.Println("")
+	// jim.updateName("jimmy")
+	// jim.print()
+	// fmt.Println("")
+
+	mySlice := []string{"Hi", "There", "How ", "Are", "You"}
+
+	updateSlice(mySlice)
+	fmt.Println(mySlice)
 
 }
 
@@ -59,4 +64,8 @@ func (pointerToPerson *person) updateName(newFirstName string) {
 
 func (p person) print() {
 	fmt.Printf("%+v", p)
+}
+
+func updateSlice(s []string) {
+	s[0] = "Bye"
 }
