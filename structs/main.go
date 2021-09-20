@@ -43,11 +43,11 @@ func main() {
 		},
 	}
 
-	jimPointer := &jim
+	// jimPointer := &jim
 
-	fmt.Print(jimPointer)
+	// fmt.Print(jimPointer)
 
-	jimPointer.updateName("jimmy")
+	jim.updateName("jimmy")
 	jim.print()
 	fmt.Println("")
 
