@@ -20,7 +20,13 @@ func main() {
 	// fruits[1] = "Melon"
 	// fmt.Println(fruits)
 	
-	colors["white"] = "#fffff"
+	colors["whine"] = "#f0f0f1"
+	colors["yellow"] = "121212"
+
+	printMap(colors)
+
+	delete(colors, "yellow")
+
 
 	// fmt.Println(colors)
 	// fmt.Println(colors["white"])
